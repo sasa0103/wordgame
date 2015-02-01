@@ -1,0 +1,23 @@
+{
+	"settings":
+	{
+		"completesharp_assemblies":
+		[
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Managed\\UnityEngine.dll",
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Managed\\UnityEditor.dll",
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Mono\\lib\\mono\\unity\\UnityScript.dll",
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Mono\\lib\\mono\\unity\\System.Core.dll",
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Mono\\lib\\mono\\unity\\System.dll",
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Managed\\nunit.framework.dll",
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Mono\\lib\\mono\\unity\\mscorlib.dll",
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Mono\\lib\\mono\\unity\\System.Core.dll",
+			"C\\Program Files (x86)\\Unity\\Editor\\Data\\Mono\\lib\\mono\\unity\\System.dll",
+			"D:\\Users\\Sarah\\uni\\job\\appTest\\Library\\ScriptAssemblies\\Assembly-CSharp.dll",
+			"D:\\Users\\Sarah\\uni\\job\\appTest\\Library\\ScriptAssemblies\\Assembly-CSharp-Editor.dll",
+			"D:\\Users\\Sarah\\uni\\job\\appTest\\Library\\ScriptAssemblies\\Assembly-UnityScript-Editor.dll",
+			"D:\\Users\\Sarah\\uni\\job\\appTest\\Library\\ScriptAssemblies\\Assembly-CSharp-firstpass.dll"
+		],
+		"completioncommon_inhibit_sublime_completions": true,
+		"completioncommon_shorten_names": true
+	}
+}
