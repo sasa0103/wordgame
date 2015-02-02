@@ -11,6 +11,5 @@ public class SetEnd : MonoBehaviour {
 	void Start () {
 		anim = GetComponent<Animator>();
 		anim.SetFloat("SelectLetter", gameManager.letterEnd[box]);
-		print ("foo: " + gameManager.letterEnd[box]);
 	}
 }

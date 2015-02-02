@@ -6,7 +6,6 @@ public class ScrollTest : MonoBehaviour {
 	public int box;
 	public bool toChoose;
 
-
 	SpriteRenderer sprite;
 
 	ArrayList aArray = new ArrayList();

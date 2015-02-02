@@ -43,7 +43,6 @@ public class gameManager {
 		LScene = new GameObject();
 		GScene = new GameObject();
 		WScene = new GameObject();
-		
 
 		words = new List<string>();
 		textFile = Resources.Load("words_all") as TextAsset;
@@ -137,4 +136,6 @@ public class gameManager {
 	public static GameObject LScene;
 	public static GameObject GScene;
 	public static GameObject WScene;
+
+	
 }

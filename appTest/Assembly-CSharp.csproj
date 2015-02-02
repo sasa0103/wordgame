@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\NextLevel.cs" />
      <Compile Include="Assets\Scripts\ScrollTest.cs" />
+     <Compile Include="Assets\Scripts\SetArrow.cs" />
      <Compile Include="Assets\Scripts\SetEnd.cs" />
      <Compile Include="Assets\Scripts\SetLetter.cs" />
      <Compile Include="Assets\Scripts\SetWords.cs" />

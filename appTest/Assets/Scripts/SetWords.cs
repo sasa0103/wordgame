@@ -24,7 +24,7 @@ public class SetWords : MonoBehaviour {
 	void OnMouseUp() {
 		initWords();
 		Fooo2.SetActive(false);
-		Application.LoadLevel("GameScene");
+		Application.LoadLevel("GameScene2");
 	}
 
 
