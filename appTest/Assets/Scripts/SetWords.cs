@@ -29,21 +29,6 @@ public class SetWords : MonoBehaviour {
 
 
 	void initWords(){
-		//Test set ARE
-		/*char first = 'A';
-		float f = (float)(char.ToUpper(first) - 65);
-		char second = 'R';
-		float s = (float)(char.ToUpper(second) - 65);
-		char third = 'E';
-		float t = (float)(char.ToUpper(third) - 65);
-
-        char firstEnd = 'A';
-		float fEnd = (float)(char.ToUpper(firstEnd) - 65);
-		char secondEnd = 'G';
-		float sEnd = (float)(char.ToUpper(secondEnd) - 65);
-		char thirdEnd = 'O';
-		float tEnd = (float)(char.ToUpper(thirdEnd) - 65);*/
-
 
 		char first = words[(level-1),0];
 		float f = (float)(char.ToUpper(first) - 65);

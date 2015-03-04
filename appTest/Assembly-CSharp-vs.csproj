@@ -73,6 +73,7 @@
      <Compile Include="Assets\Scripts\MoveScript.cs" />
      <Compile Include="Assets\Scripts\NextLevel.cs" />
      <Compile Include="Assets\Scripts\ScrollTest.cs" />
+     <Compile Include="Assets\Scripts\ScrollTest2.cs" />
      <Compile Include="Assets\Scripts\SetArrow.cs" />
      <Compile Include="Assets\Scripts\SetEnd.cs" />
      <Compile Include="Assets\Scripts\SetLetter.cs" />
@@ -135,13 +136,13 @@
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_button_check.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector_background_transition.xml" />
  <Reference Include="Assembly-UnityScript-firstpass">
- <HintPath>D:/Users/Sarah/uni/job/appTest/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
+ <HintPath>D:/Users/Sarah/uni/wordgame/appTest/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>
  <Reference Include="UnityEngine.UI">
  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/4.6.0/UnityEngine.UI.dll</HintPath>
  </Reference>
  <Reference Include="IFacebook">
- <HintPath>D:/Users/Sarah/uni/job/appTest/Assets/Facebook/Scripts/IFacebook.dll</HintPath>
+ <HintPath>D:/Users/Sarah/uni/wordgame/appTest/Assets/Facebook/Scripts/IFacebook.dll</HintPath>
  </Reference>
   </ItemGroup>
   <ItemGroup>

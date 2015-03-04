@@ -16,6 +16,9 @@ public class LevelEnd : MonoBehaviour {
 		//gameManager.LScene.SetActive(true);
 		SetScore();
 		Application.LoadLevel("LevelScene");
+		gameManager.choosableLetters[0].Clear();
+		gameManager.choosableLetters[1].Clear();
+		gameManager.choosableLetters[2].Clear();
 	}
 
 	public void SetScore(){

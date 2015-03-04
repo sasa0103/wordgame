@@ -32,6 +32,7 @@ public class gameManager {
 		valid = false;
 		level = 0;
 		currentLevelMenu = 1;
+		currentLetter = new int[] {0,0,0};
 
 		storePath = new Hashtable();
 		appStarted = false;
@@ -39,10 +40,15 @@ public class gameManager {
 		score = new Hashtable();
 		time = new Hashtable();
 		oldScore = 0;
+		pressed = false;
 
 		LScene = new GameObject();
 		GScene = new GameObject();
 		WScene = new GameObject();
+
+		choosableLetters = new Hashtable[] {new Hashtable(),new Hashtable(),new Hashtable()};
+		allLetter = new Sprite[26];
+		setAllLetter = false;
 
 		words = new List<string>();
 		textFile = Resources.Load("words_all") as TextAsset;
@@ -99,7 +105,6 @@ public class gameManager {
 				}
 			}
 		}
-
 		return letters; 
 	}
 
@@ -122,7 +127,7 @@ public class gameManager {
 	public static int oldScore;
 	public static Hashtable time;
 	public static int currentLevelMenu;
-	
+	public static int[] currentLetter;
 
 	public static Hashtable storePath;
 
@@ -137,5 +142,10 @@ public class gameManager {
 	public static GameObject GScene;
 	public static GameObject WScene;
 
+	public static Hashtable[] choosableLetters;
+
+	public static bool pressed;
+	public static Sprite[] allLetter;
+	public static bool setAllLetter;
 	
 }

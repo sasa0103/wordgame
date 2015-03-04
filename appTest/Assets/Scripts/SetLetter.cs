@@ -25,38 +25,34 @@ public class SetLetter : MonoBehaviour {
 	}
 
 	void check(){
-		if (gameManager.isFade[0] == true || gameManager.isFade[1] == true || gameManager.isFade[2] == true){
-			print ("fail");
-			gameManager.valid = false;
+		print ("OK");
+		gameManager.ok = true;
+
+		gameManager.letter[0] = Mathf.Round(gameManager.letter[0]);
+		gameManager.letter[1] = Mathf.Round(gameManager.letter[1]);
+		gameManager.letter[2] = Mathf.Round(gameManager.letter[2]);
+
+		s = null;
+		s += ((char)(gameManager.letter[0]+ 65f)).ToString();
+		s += ((char)(gameManager.letter[1]+ 65f)).ToString();
+		s += ((char)(gameManager.letter[2]+ 65f)).ToString();
+
+		if(gameManager.storePath.ContainsKey(gameManager.level)){
+			string st = gameManager.storePath[gameManager.level] +  ", " + s;
+			gameManager.storePath.Remove(gameManager.level);
+			gameManager.storePath.Add(gameManager.level,st);
 		}else{
-			gameManager.ok = true;
+			gameManager.storePath.Add(gameManager.level,s);
+		}
 
-			gameManager.letter[0] = Mathf.Round(gameManager.letter[0]);
-			gameManager.letter[1] = Mathf.Round(gameManager.letter[1]);
-			gameManager.letter[2] = Mathf.Round(gameManager.letter[2]);
-
-			s = null;
-			s += ((char)(gameManager.letter[0]+ 65f)).ToString();
-			s += ((char)(gameManager.letter[1]+ 65f)).ToString();
-			s += ((char)(gameManager.letter[2]+ 65f)).ToString();
-
-
-			if(gameManager.storePath.ContainsKey(gameManager.level)){
-				string st = gameManager.storePath[gameManager.level] +  ", " + s;
-				gameManager.storePath.Remove(gameManager.level);
-				gameManager.storePath.Add(gameManager.level,st);
-			}else{
-				gameManager.storePath.Add(gameManager.level,s);
-			}
-			
-			if(gameManager.letter.SequenceEqual(gameManager.letterEnd)){
-				CalcScore();
-				t = Time.timeSinceLevelLoad;
-				gameManager.time[gameManager.level] = t;
-				Application.LoadLevel("WinScene");
-			}
+		if(gameManager.letter.SequenceEqual(gameManager.letterEnd)){
+			CalcScore();
+			t = Time.timeSinceLevelLoad;
+			gameManager.time[gameManager.level] = t;
+			Application.LoadLevel("WinScene");
 		}
 	}
+	
 	void CalcScore(){
 		int anzWords = (((gameManager.storePath[gameManager.level].ToString().Length)+2)/5);
 		int min = 0;
