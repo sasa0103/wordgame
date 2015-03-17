@@ -41,7 +41,7 @@ public class SetArrow : MonoBehaviour {
 
 
 	private int current = 0;
-	ArrayList aArray = new ArrayList();
+
 
 
 	void Start () {
@@ -49,7 +49,7 @@ public class SetArrow : MonoBehaviour {
 			gameManager.allLetter = new Sprite[] {a,b,c,d,e,f,g,h,i,j,k,l,m,n,o,p,q,r,s,t,u,v,w,x,y,z};		
 
 			gameManager.setAllLetter = true;
-			setChoosableLetters();
+			gameManager.setChoosableLetters();
 		}
 		
 		LetterBoxStart.GetComponent<Image>().sprite = gameManager.allLetter[(int)gameManager.letter[box]];
@@ -63,46 +63,36 @@ public class SetArrow : MonoBehaviour {
 			gameManager.canChange[(box+1)%3] = false;
 			gameManager.canChange[(box+2)%3] = false;
 			gameManager.pressed = true;
+
+			gameManager.currentLetter = (int)gameManager.letter[box];
 		}
 		if(gameManager.canChange[box]){
 			if(name.Equals("up0") || name.Equals("up1") || name.Equals("up2")){
-				gameManager.currentLetter[box]++;
-				//if(current >= 26){
-				//	current = current - 26;
-				//}
-				gameManager.currentLetter[box] = gameManager.currentLetter[box]%26;
-				while (!gameManager.choosableLetters[box].ContainsKey(gameManager.currentLetter[box])){
-					//current++;
-					//if(current >= 26){
-					//	current = current - 26;
-					//}
-					gameManager.currentLetter[box] = (gameManager.currentLetter[box]+1)%26;
-					print ("current while +: " + gameManager.currentLetter[box]);
+				gameManager.currentLetter++;
+				gameManager.currentLetter = gameManager.currentLetter%26;
+
+				while (!gameManager.choosableLetters[box].ContainsKey(gameManager.currentLetter)){
+					gameManager.currentLetter = (gameManager.currentLetter+1)%26;
 				}
-				print ("current: " + gameManager.currentLetter[box]);
+
+				print ("current: " + gameManager.currentLetter);
 				Hashtable h = gameManager.choosableLetters[box];
-				LetterBox.GetComponent<Image>().sprite = (Sprite)h[gameManager.currentLetter[box]];
-				gameManager.letter[box] = (float)gameManager.currentLetter[box];
+				LetterBox.GetComponent<Image>().sprite = (Sprite)h[gameManager.currentLetter];
+				gameManager.letter[box] = (float)gameManager.currentLetter;
 			}
 			if(name.Equals("down0") || name.Equals("down1") || name.Equals("down2")){
-				//current--;
-				//if(current < 0){
-				//	current = current + 26;
-				//}
-				gameManager.currentLetter[box] = gameManager.currentLetter[box] + 25;
-				gameManager.currentLetter[box] = gameManager.currentLetter[box]%26;
-				while (!gameManager.choosableLetters[box].ContainsKey(gameManager.currentLetter[box])){
-					//current--;
-					//if(current < 0){
-					//	current = current + 26;
-					//}
-					gameManager.currentLetter[box] = (gameManager.currentLetter[box]-1)%26;
-					print ("current while -: " + gameManager.currentLetter[box]);
+				gameManager.currentLetter = gameManager.currentLetter + 25;
+				gameManager.currentLetter = gameManager.currentLetter%26;
+
+				while (!gameManager.choosableLetters[box].ContainsKey(gameManager.currentLetter)){
+					gameManager.currentLetter = (gameManager.currentLetter-1)%26;
+					print ("current while -: " + gameManager.currentLetter);
 				}
-				print ("current: " + gameManager.currentLetter[box]);
+
+				print ("current: " + gameManager.currentLetter);
 				Hashtable h = gameManager.choosableLetters[box];
-				LetterBox.GetComponent<Image>().sprite = (Sprite)h[gameManager.currentLetter[box]];
-				gameManager.letter[box] = (float)gameManager.currentLetter[box];
+				LetterBox.GetComponent<Image>().sprite = (Sprite)h[gameManager.currentLetter];
+				gameManager.letter[box] = (float)gameManager.currentLetter;
 			}
 		}
 
@@ -129,7 +119,6 @@ public class SetArrow : MonoBehaviour {
 				    LetterBoxStart.GetComponent<Image>().sprite = gameManager.allLetter[th];
 					break;
 
-				//anim.SetFloat("SelectLetter", gameManager.letter[box]);
 				gameManager.oldLetter[box] = gameManager.letter[box];
 			}
 
@@ -137,7 +126,7 @@ public class SetArrow : MonoBehaviour {
 
 		if(!gameManager.ok && gameManager.canChange[box] && !gameManager.reset[box]){
 			if (gameManager.first[box] && toChange){
-				setChoosableLetters();
+				//setChoosableLetters();
 				gameManager.first[box] = false;
 			}
 			gameManager.ok = false;
@@ -163,20 +152,22 @@ public class SetArrow : MonoBehaviour {
 	}
 
 
-	void setChoosableLetters(){
+	/*void setChoosableLetters(){
 		char x = (char)(gameManager.letter[0]+ 65f);
 		char y = (char)(gameManager.letter[1]+ 65f);
 		char z = (char)(gameManager.letter[2]+ 65f);
 		gameManager.choosableLetters[box].Clear();
-		aArray = gameManager.getChoosableLetters(x, y, z, box);
+		ArrayList aArray = gameManager.getChoosableLetters(x, y, z, box);
 		foreach(float i in aArray)
 		{
 			int index = (int) i;
 			Sprite sprite = gameManager.allLetter[index];
-			print ("Box: "+box+ ", " +gameManager.allLetter[index]);
-			//gameManager.choosableLetters[box].Add(index,sprite);
+			//print ("Box: "+box+ ", " +gameManager.allLetter[index]);
+			if(!gameManager.choosableLetters[box].ContainsKey(i)){
+				gameManager.choosableLetters[box].Add(index,sprite);
+			}
 		}
-	}
+	}*/
 
 	void setBack(){
 		gameManager.canChange[0] = true;
@@ -185,6 +176,8 @@ public class SetArrow : MonoBehaviour {
 		//anim.SetBool("OKisTouched", gameManager.ok);
 		gameManager.ok = false;
 		gameManager.pressed = false;
+		//gameManager.choosableLetters[box].Clear();
+		gameManager.currentLetter = 0;
 		print ("setBack");
 	}
 

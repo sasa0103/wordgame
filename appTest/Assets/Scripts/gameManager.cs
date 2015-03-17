@@ -32,7 +32,7 @@ public class gameManager {
 		valid = false;
 		level = 0;
 		currentLevelMenu = 1;
-		currentLetter = new int[] {0,0,0};
+		currentLetter = 0;
 
 		storePath = new Hashtable();
 		appStarted = false;
@@ -108,6 +108,46 @@ public class gameManager {
 		return letters; 
 	}
 
+	public static void setChoosableLetters(){
+		char x = (char)(gameManager.letter[0]+ 65f);
+		char y = (char)(gameManager.letter[1]+ 65f);
+		char z = (char)(gameManager.letter[2]+ 65f);
+		
+		gameManager.choosableLetters[0].Clear();
+		gameManager.choosableLetters[1].Clear();
+		gameManager.choosableLetters[2].Clear();
+		
+		ArrayList aArray = gameManager.getChoosableLetters(x, y, z, 0);
+		foreach(float i in aArray)
+		{
+			int index = (int) i;
+			Sprite sprite = gameManager.allLetter[index];
+			if(!gameManager.choosableLetters[0].ContainsKey(index)){
+				gameManager.choosableLetters[0].Add(index,sprite);
+			}
+		}
+		
+		aArray = gameManager.getChoosableLetters(x, y, z, 1);
+		foreach(float i in aArray)
+		{
+			int index = (int) i;
+			Sprite sprite = gameManager.allLetter[index];
+			if(!gameManager.choosableLetters[1].ContainsKey(index)){
+				gameManager.choosableLetters[1].Add(index,sprite);
+			}
+		}
+		
+		aArray = gameManager.getChoosableLetters(x, y, z, 2);
+		foreach(float i in aArray)
+		{
+			int index = (int) i;
+			Sprite sprite = gameManager.allLetter[index];
+			if(!gameManager.choosableLetters[2].ContainsKey(index)){
+				gameManager.choosableLetters[2].Add(index,sprite);
+			}
+		}
+	}
+
 	//Variables
 	
 	public static bool[] klickBox;
@@ -127,7 +167,7 @@ public class gameManager {
 	public static int oldScore;
 	public static Hashtable time;
 	public static int currentLevelMenu;
-	public static int[] currentLetter;
+	public static int currentLetter;
 
 	public static Hashtable storePath;
 

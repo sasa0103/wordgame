@@ -89,6 +89,7 @@
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_top_button.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_picker_list_selector.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values\strings.xml" />
+     <None Include="Assets\Resources\word_pairs.txt" />
      <None Include="Assets\Plugins\Android\facebook\proguard-project.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_usersettingsfragment.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-he\strings.xml" />
@@ -108,6 +109,7 @@
      <None Include="Assets\Plugins\Android\facebook\res\drawable\com_facebook_loginbutton_silver.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-hdpi\dimens.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-mdpi\dimens.xml" />
+     <None Include="Assets\Resources\words_new.txt" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_placepickerfragment_list_row.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\layout\com_facebook_picker_title_bar.xml" />
      <None Include="Assets\Plugins\Android\facebook\res\values-iw\strings.xml" />

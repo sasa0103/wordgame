@@ -46,13 +46,15 @@ public class SetLetter : MonoBehaviour {
 		}
 
 		if(gameManager.letter.SequenceEqual(gameManager.letterEnd)){
+			gameManager.setAllLetter = false;
 			CalcScore();
 			t = Time.timeSinceLevelLoad;
 			gameManager.time[gameManager.level] = t;
 			Application.LoadLevel("WinScene");
 		}
+		gameManager.setChoosableLetters();		
 	}
-	
+
 	void CalcScore(){
 		int anzWords = (((gameManager.storePath[gameManager.level].ToString().Length)+2)/5);
 		int min = 0;
